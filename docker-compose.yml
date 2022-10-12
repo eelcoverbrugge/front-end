@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    build:
+      context: . # location to find all files to run this project
+      dockerfile: Dockerfile.dev # Dockerfile to build image
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app # map '.' folder outside the container to '/app' inside the container
